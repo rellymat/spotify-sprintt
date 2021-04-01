@@ -1,141 +1,45 @@
+/* App.js */
+
 .rowC{
   display:flex;
   flex-direction:row;
 }
 
+/* navBar.jsx */
+
+.nav_menu{
+  position: fixed;
+  top: 138px;
+  left: 25px;
+  color: #191414;
+}
+
+.nav_item{
+  display:flex;
+  flex-direction:row;
+}
 
 .nav_item:hover {
-  width: 210px;
-  height: 55px;
-  background-color: black;
+  background: rgba(29, 185, 84, 0.15);
   border-radius: 10px;
 }
 
-.wrapper {
-  position: absolute;
+.navbar {
+  position: relative;
   width: 270px;
   height: 1080px;
   left: -1px;
   top: 0px;
-
   background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
 }
 
 .Frame_9{
-  position: absolute;
+  position: fixed;
   width: 210px;
   height: 58px;
   left: 28px;
   top: 54px;
   background: #FFFFFF;
-}
-
-.Rectangle_17{
-  position: absolute;
-  width: 210px;
-  height: 55px;
-  left: 25px;
-  top: 120px;
-
-  background: rgba(29, 185, 84, 0.15);
-  border-radius: 10px;
-}
-
-.Rectangle_18{
-  position: absolute;
-  width: 210px;
-  height: 55px;
-  left: 25px;
-  top: 175px;
-
-  background: rgba(29, 185, 84, 0.15);
-  border-radius: 10px;
-}
-
-.Rectangle_19{
-  position: absolute;
-  width: 210px;
-  height: 55px;
-  left: 25px;
-  top: 240px;
-
-  background: rgba(29, 185, 84, 0.15);
-  border-radius: 10px;
-}
-
-
-.Home{
-  
-  position: absolute;
-  width: 49px;
-  height: 21px;
-  left: 98px;
-  top: 138px;
-
-  font-family: 'Rubik', sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 21px;
-
-  color: #191414;
-}
-
-.Vector{
-  position: absolute;
-  width: 20.18px;
-  height: 21.6px;
-  left: 55px;
-  top: 136px;
-}
-
-.Vector1{
-  position: absolute;
-  width: 22.4px;
-  height: 18.4px;
-  left: 55px;
-  top: 199px
-}
-
-.Browse {
-  position: absolute;
-  width: 61px;
-  height: 21px;
-  left: 98px;
-  top: 196px;
-
-  font-family: Rubik;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 21px;
-
-  color: #191414;
-}
-
-.Ellipse{
-  position: absolute;
-  width: 22.38px;
-  height: 22.4px;
-  left: 52px;
-  top: 255px;
-
-}
-
-.Liked_songs{
-  position: absolute;
-  width: 96px;
-  height: 21px;
-  left: 98px;
-  top: 259px;
-
-  font-family: Rubik;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 21px;
-
-  color: #191414;
 }
 
 .sprintt {
@@ -146,4 +50,40 @@
   top: -5px;
 
   background: url(./assets/logo.png);
+}
+
+
+.Rectangle_17{
+  position: relative;
+  width: 210px;
+  height: 55px;
+}
+
+.active {
+  background: rgba(29, 185, 84, 0.15);
+  border-radius: 10px;
+}
+
+.Vector{
+  position: absolute;
+  width: 20.18px;
+  height: 21.6px;
+  left: 30px; 
+  top: 16px;
+}
+
+.nav_text {
+  position: absolute;
+  width: 96px;
+  height: 21px;
+  left: 73px;
+  top: 18px;
+
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #191414;
 }
