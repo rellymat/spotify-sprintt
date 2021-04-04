@@ -14,11 +14,6 @@
   color: #191414;
 }
 
-.nav_item{
-  display:flex;
-  flex-direction:row;
-}
-
 .nav_item:hover {
   background: rgba(29, 185, 84, 0.15);
   border-radius: 10px;
@@ -86,4 +81,92 @@
   line-height: 21px;
 
   color: #191414;
+}
+
+/* playlist.jsx */
+
+.img_playlist {
+  width: 201px;
+  height: 201px;
+  border-radius: 25px;
+}
+
+.name {
+  position: relative;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: bold;
+  width: 197px;
+  font-size: 18px;
+  line-height: 21px;
+  top: 10px;
+}
+
+.description {
+  width: 177px;
+  height: 34px;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+/* title.jsx */
+
+.title {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 33px;
+  height: 33px;
+}
+
+.arrows {
+  position: relative;
+  font-size: 17.05px;
+}
+
+.arrowL {
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+.arrowR {
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.25;
+  cursor: unset;
+}
+
+.container_title {
+  height: 33px;
+  justify-content: space-between;
+}
+
+/* playlistCarousel.jsx */
+
+.carousel {
+  position: relative;
+  margin-top: 5%;
+  margin-left: auto;
+}
+
+.playlist {
+  position: relative;
+  top: 20px;
+  justify-content: space-between;
+}
+
+/* home.jsx */
+
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
 }

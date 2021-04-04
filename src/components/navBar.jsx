@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import home from "../assets/home_icon.png"
 import browse from "../assets/browse_icon.png"
 import liked from "../assets/liked_songs_icon.png"
-import { withRouter } from "react-router";
 import NavItem from "./commons/navItem";
 
 
@@ -11,7 +10,7 @@ class NavBar extends Component {
     state = {
         nav_items: [
             {
-                path: '/home',
+                path: '/',
                 img: home,
                 text: 'Home'
             },
@@ -21,7 +20,7 @@ class NavBar extends Component {
                 text: 'Browse'
             },
             {
-                path: '/liked',
+                path: '/liked_songs',
                 img: liked,
                 text: 'Liked songs'
             }
@@ -29,7 +28,6 @@ class NavBar extends Component {
     }
 
     render() {
-        const currectPath = this.props.location.pathname;
         return (
             <nav className="navbar">
                 <div className="Frame_9">
@@ -38,7 +36,7 @@ class NavBar extends Component {
                 <div className="nav_menu">
                     {this.state.nav_items.map((item, index) => {
                         return (
-                            <NavItem key={index} path={item.path} img={item.img} text={item.text} currectPath={currectPath}/>
+                            <NavItem key={index} item={item} />
                         )
                     })}
                 </div>
@@ -47,4 +45,4 @@ class NavBar extends Component {
     }
 }
 
-export default withRouter(NavBar);
+export default NavBar;
