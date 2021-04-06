@@ -1,3 +1,5 @@
+
+
 /* App.js */
 
 .rowC{
@@ -170,4 +172,85 @@
   flex-direction: column;
   align-items: center;
   margin-top: 3%;
+}
+
+
+/* header.jsx */
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  top: 0%;
+  height: 220px;
+}
+
+.black-layer {
+  position: absolute;
+  background-color: black;
+  opacity: 0.5;
+  border: #191414 1px solid;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+
+.first-line {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  top: 30%;
+  justify-content: space-between;
+}
+
+.second-line {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  top: 30%;
+  justify-content: space-between;
+}
+
+.header-text {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 43px;
+  color: #F1F1F1;
+}
+
+.description-text {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #F1F1F1;
+}
+
+/* songsTable.jsx */
+
+th {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+
+  color: #191414;
+}
+
+thead {
+  border-bottom: 1px solid #646464;
+}
+
+td {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #191414;
 }
