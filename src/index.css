@@ -1,4 +1,6 @@
-
+body {
+  background-color: rgba(29, 185, 84, 0.15);  
+}
 
 /* App.js */
 
@@ -16,7 +18,7 @@
   color: #191414;
 }
 
-.nav_item:hover {
+.Rectangle_17:hover {
   background: rgba(29, 185, 84, 0.15);
   border-radius: 10px;
 }
@@ -87,25 +89,30 @@
 
 /* playlist.jsx */
 
+.playitem {
+  border: #191414 1px solid;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
 .img_playlist {
-  width: 201px;
-  height: 201px;
+  width: 80%;
+  height: 80%;
   border-radius: 25px;
 }
 
 .name {
-  position: relative;
   font-family: 'Rubik';
   font-style: normal;
   font-weight: bold;
-  width: 197px;
+  width: 80%;
   font-size: 18px;
   line-height: 21px;
-  top: 10px;
 }
 
 .description {
-  width: 177px;
+  width: 80%;
   height: 34px;
   font-family: 'Rubik';
   font-style: normal;
@@ -117,7 +124,7 @@
 /* title.jsx */
 
 .title {
-  font-family: Rubik;
+  font-family: 'Rubik';
   font-style: normal;
   font-weight: normal;
   font-size: 28px;

@@ -10,7 +10,7 @@ function PlaylistCarousel({title, playlists}) {
     useEffect(() => {
         const currectPage = page * 5
         setFive(playlists.slice(currectPage , currectPage + 5))
-    })
+    },[page, playlists])
 
     function onArrowClick() {
         if (page === 0)
@@ -18,6 +18,7 @@ function PlaylistCarousel({title, playlists}) {
         else
             setPage(0)
     }
+
 
     return (
         <div className="container carousel">

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const NavItem = ({item}) => {
     const {path, img, text} = item
-    const classes = 'rowC Rectangle_17'
+    const classes = 'rowC Rectangle_17 '
     return (
         <NavLink className={classes}
             activeClassName="active"
