@@ -14,3 +14,8 @@ export async function getMood(){
     return await axios.get('http://api.sprintt.co/spotify/mood_playlists?limit=10', {headers: header})
 }
 
+export async function getPlaylist(playlistId){
+    return await axios.get(`http://api.sprintt.co/spotify/playlist_tracks/${playlistId}`, {headers: header})
+}
+
+

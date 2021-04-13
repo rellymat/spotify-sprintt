@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PlaylistCarousel from './playlistCarousel';
 import { getRecently, getFeatured, getMood } from '../services/playlists'
-import Playlist from './commons/playlist';
 
 
 class Home extends Component {

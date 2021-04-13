@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Header = ({playlist, number, duration}) => {
-    const {description, image_url, name} = playlist
+    const {description, image_url, name} = playlist.playlist
     const style = {
             backgroundImage: `url(${image_url})`,
             backgroundPosition: 'center',
@@ -18,7 +18,7 @@ const Header = ({playlist, number, duration}) => {
             </div>
             <div className="rowC second-line">
                 <p className="description-text">{description}</p>
-                <p className="description-text">{duration}</p>
+                <p className="description-text duration">{duration}</p>
             </div>
         </div>
     );

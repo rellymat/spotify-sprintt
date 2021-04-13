@@ -1,6 +1,3 @@
-body {
-  background-color: rgba(29, 185, 84, 0.15);  
-}
 
 /* App.js */
 
@@ -24,11 +21,11 @@ body {
 }
 
 .navbar {
-  position: relative;
+  position: sticky !important;
   width: 270px;
-  height: 1080px;
-  left: -1px;
-  top: 0px;
+  height: 110vh;
+  left: 0%;
+  top: 0%;
   background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
 }
 
@@ -90,23 +87,25 @@ body {
 /* playlist.jsx */
 
 .playitem {
-  border: #191414 1px solid;
   display: flex;
   flex-direction: column;
-  height: fit-content;
+  width: 18%;
 }
 
 .img_playlist {
-  width: 80%;
-  height: 80%;
-  border-radius: 25px;
+  width: 100%;
+  height: 60%;
+  border-radius: 15px;
 }
 
 .name {
+  position: relative;
   font-family: 'Rubik';
   font-style: normal;
   font-weight: bold;
+  cursor: pointer;
   width: 80%;
+  top: 5%;
   font-size: 18px;
   line-height: 21px;
 }
@@ -117,6 +116,7 @@ body {
   font-family: 'Rubik';
   font-style: normal;
   font-weight: normal;
+  cursor: pointer;
   font-size: 14px;
   line-height: 17px;
 }
@@ -159,9 +159,7 @@ body {
 /* playlistCarousel.jsx */
 
 .carousel {
-  position: relative;
-  margin-top: 5%;
-  margin-bottom: 3%;
+  margin-top: 3%;
   margin-left: auto;
 }
 
@@ -179,6 +177,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 3%;
+  width: 100%;
 }
 
 
@@ -189,7 +188,8 @@ body {
   position: sticky;
   width: 100%;
   top: 0%;
-  height: 220px;
+  height: 22vh;
+  z-index: 1
 }
 
 .black-layer {
@@ -212,11 +212,10 @@ body {
 }
 
 .second-line {
-  position: relative;
+  position: absolute;
   width: 80%;
-  margin: auto;
-  top: 30%;
-  justify-content: space-between;
+  top: 60%;
+  right: 10%;
 }
 
 .header-text {
@@ -229,6 +228,7 @@ body {
 }
 
 .description-text {
+  width: 50%;
   font-family: 'Rubik';
   font-style: normal;
   font-weight: normal;
@@ -237,27 +237,206 @@ body {
   color: #F1F1F1;
 }
 
-/* songsTable.jsx */
-
-th {
-  font-family: Rubik;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 22px;
-  line-height: 26px;
-
-  color: #191414;
+.duration {
+  text-align: right;
 }
 
-thead {
-  border-bottom: 1px solid #646464;
+/* songsTable.jsx */
+
+table {
+  margin: auto;
+}
+
+
+.tablesize {
+  width: 90%;
+  height: fit-content;
+  margin: auto;
+}
+
+th {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  line-height: 26px;
+  color: #191414;
+  white-space: nowrap;
+}
+
+.border_th {
+  border-bottom: 1px solid #646464 !important;
+}
+
+.border_td {
+  border-bottom: 0.5px solid #646464 !important;
 }
 
 td {
-  font-family: Rubik;
+  font-family: 'Rubik';
   font-style: normal;
   font-weight: normal;
-  font-size: 22px;
   line-height: 26px;
   color: #191414;
 }
+
+
+.liked {
+  width: 40px;
+  height: 40px;
+}
+
+.button{
+  border: none;
+  opacity: 0;
+}
+
+
+
+.song_row:hover  > .button, .button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.song_row:hover{
+ background:  rgba(29, 185, 84, 0.2);
+}
+
+
+/* likedSongs.jsx */
+
+.liked_songs {
+  position: relative;
+  margin-right: auto;
+  width: 85%;
+  height: 100%;
+  align-items: center;
+  background: rgba(29, 185, 84, 0.15);
+}
+
+
+/* filterBar.jsx */
+
+.filterBar{
+  margin-left: -3%;
+  border: none;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  text-indent: 17%;
+  background: none;
+}
+
+.bar {
+  position: relative;
+  overflow: hidden;
+  margin-left: 11%;
+  margin-top: 3%;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.magnifying {
+  font-size: 1.5em;
+  margin-bottom: 1%;
+  color: rgba(100, 100, 100, 1);
+}
+
+/* playbackbar.jsx */
+
+.playbackbar{
+  position: fixed;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #F1F1F1;
+  height: 15%;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+}
+
+.text_bar{
+  margin-left: 1%;
+  margin-top: auto;
+}
+
+.p_title{
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.p_desc{
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+/* playbackbuttons.jsx */
+
+.playbackbuttons{
+  width: 44%;
+  margin-top: auto;
+  margin-left: 2%;
+}
+
+.buttons_bar {
+  width: 25%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.button_bar:hover{
+  opacity: 0.3;
+}
+
+
+/* progressBar.jsx */
+
+
+.timer {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+   appearance: none;
+   height: 5px;
+}
+
+.progressBar > progress[value] {
+  width: 100%;
+  margin: 1.5%;
+}
+
+progress[value]::-webkit-progress-bar {
+  background: #C4C4C4;
+  border-radius: 11px;
+}
+
+progress[value]::-webkit-progress-value {
+  background: #191414;
+  border-radius: 11px;
+}
+
+
+/* volumeBar.jsx */
+
+.volume{
+ margin-left: 7%; 
+ align-items: center;
+}
+
+.volume_button {
+  width: 18.28px;
+  height: 20px;
+  margin-right: 5%;
+}
+
