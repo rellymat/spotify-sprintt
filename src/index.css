@@ -93,8 +93,6 @@
 }
 
 .img_playlist {
-  width: 100%;
-  height: 60%;
   border-radius: 15px;
 }
 
@@ -290,11 +288,12 @@ td {
   opacity: 0;
 }
 
-
+.song_row {
+  cursor: pointer;
+}
 
 .song_row:hover  > .button, .button:hover {
   opacity: 1;
-  cursor: pointer;
 }
 
 .song_row:hover{

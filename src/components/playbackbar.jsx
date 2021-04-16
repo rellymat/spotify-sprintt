@@ -2,15 +2,15 @@ import React from 'react';
 import PlaybackButtons from './commons/playbackbuttons';
 import VolumeBar from './commons/volumeBar';
 
-const PlaybackBar = ({song}) => {
+const PlaybackBar = ({ song, track, onButtonPlay, isPlay }) => {
     return (
         <div className="rowC playbackbar">
             <img src={song.playlist.image_url} alt="" />
             <div className="text_bar">
-                <p className="p_title">{song.playlist.name}</p>
-                <p className="p_desc">{song.playlist.description}</p>
+                <p className="p_title">{track.name}</p>
+                <p className="p_desc">{track.album_name}</p>
             </div>
-            <PlaybackButtons />
+            <PlaybackButtons onButtonPlay={onButtonPlay} isPlay={isPlay} track={track}/>
             <VolumeBar />
         </div>
     );
