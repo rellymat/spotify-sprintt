@@ -10,7 +10,10 @@ const getEncryptedToken = (token) => {
     return btoa(stringToEncrypt)
   }
 
-export const getSong =  (song_id) => {
-    const a = new Audio(`${url}play/${song_id}?access=${getEncryptedToken(token)}`)
-    a.play()
+const newToken = getEncryptedToken(token)
+
+export const getSong = song_id => {
+  const a = new Audio(`${url}play/${song_id}?access=${newToken}`)
+  a.load()
+  return a
 }

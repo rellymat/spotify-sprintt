@@ -16,6 +16,7 @@ const PlaylistPage = () => {
     const [tracksNumber, setTracksNumber] = useState('')
     const [input, setInput] = useState('')
     const [track, setTrack] = useState({})
+    const [audio, setAudio] = useState()
     const [isPlay, setIsPlay] = useState(false)
     const playlist = location.state
 
@@ -35,7 +36,7 @@ const PlaylistPage = () => {
         setDuration(data.playlist_duration)
         setTracksNumber(data.playlist_tracks)
         setTrack(data.tracks[0])
-        getSong(data.tracks[0].track_id)
+        setAudio(getSong(data.tracks[0].track_id))
     }
 
     const updateFilter = input => {
@@ -62,8 +63,16 @@ const PlaylistPage = () => {
 
     const playHandle = song => {
         setIsPlay(!isPlay)
-        if (song !== track)
+        
+        if (song !== track){
             setTrack(song)
+            setAudio(getSong(song.track_id))
+        }
+
+        if (!isPlay)
+            audio.play()
+        else 
+            audio.pause() 
     }
 
     return (
