@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Title from './commons/title';
 import Playlist from './commons/playlist';
 
-function PlaylistCarousel({title, playlists}) {
+function PlaylistCarousel({ title, playlists }) {
     const [page, setPage] = useState(0)
     const [currectFive, setFive] = useState(playlists.slice(0, 5))
     const length = playlists.length

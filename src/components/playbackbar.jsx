@@ -1,19 +1,21 @@
 import React from 'react';
-import PlaybackButtons from './commons/playbackbuttons';
+import PlaybackButtons from './playbackbuttons';
 import VolumeBar from './commons/volumeBar';
+import * as audio from '../services/audio'
 
-const PlaybackBar = ({ song, track, onButtonPlay, isPlay }) => {
+const PlaybackBar = ({ image }) => {
+
     return (
         <div className="rowC playbackbar">
-            <img src={song.playlist.image_url} alt="" />
+            <img src={image} alt="" />
             <div className="text_bar">
-                <p className="p_title">{track.name}</p>
-                <p className="p_desc">{track.album_name}</p>
+                <p className="p_title">{audio.getSong().name}</p>
+                <p className="p_desc">{audio.getSong().album_name}</p>
             </div>
-            <PlaybackButtons onButtonPlay={onButtonPlay} isPlay={isPlay} track={track}/>
+            <PlaybackButtons />
             <VolumeBar />
         </div>
     );
 }
- 
+
 export default PlaybackBar;

@@ -1,11 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import likedImg from '../assets/liked_songs.jpg'
+import PlaylistComp from "./playlistComp";
 
 
-class Browse extends Component {
-    state = {  }
-    render() { 
-        return ( <h1>Browse Page</h1> );
-    }
+const LikedSong = () => {
+    
+    return (
+        <PlaylistComp
+            id='liked_tracks'
+            description=''
+            image={likedImg}
+            name="Liked Songs"
+             />
+    )
+
+
+
 }
- 
-export default Browse;
+
+export default LikedSong;

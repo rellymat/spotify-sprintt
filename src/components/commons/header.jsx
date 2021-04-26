@@ -1,9 +1,8 @@
 import React from 'react';
 
-const Header = ({playlist, number, duration}) => {
-    const {description, image_url, name} = playlist.playlist
+const Header = ({ description, image, name, number, duration}) => {
     const style = {
-            backgroundImage: `url(${image_url})`,
+            backgroundImage: `url(${image})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
