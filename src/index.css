@@ -535,7 +535,7 @@ progress[value]::-webkit-progress-value {
     display: block;
     position: absolute;
     margin-top: 4%;
-    margin-left: 4%;
+    margin-left: 4.5%;
     cursor: pointer;
   }
 
