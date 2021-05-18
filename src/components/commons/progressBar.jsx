@@ -1,26 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import * as audio from '../../services/audio';
+import React, { useState, useEffect, useContext  } from 'react';
+import { PlayerContext } from '../player';
 
 
 
 const ProgressBar = () => {
+    const { isPlaying, track, audio, changeTrack } = useContext(PlayerContext)
     const [currentTime, setCurrentTime] = useState(0)
-    const [durationTime, setDurationTime] = useState(audio.getSong().duration / 1000)
-    const timer = () => setCurrentTime(audio.getCurrentTime())
+    const [durationTime, setDurationTime] = useState(0)
+    const timer = () => setCurrentTime(audio.currentTime)
 
     useEffect(
         () => {
-            if (audio.isFinish()) {
-                audio.songDone()
-                audio.resetAudio()
+            if (songOver()) {
+                changeTrack(1)
                 return;
             }
-            const id = setInterval(timer, 500)
-            setDurationTime(audio.getSong().duration / 1000)
-            return () => clearInterval(id)
+            if (track[0].duration !== undefined){
+                const id = setInterval(timer, 500)
+                setDurationTime(track[0].duration / 1000)
+                return () => clearInterval(id)
+            }
         },
-        [currentTime, audio.getIsPlay(), audio.getSong()]
+        [currentTime, isPlaying[0], track[0]]
     )
+
+    const songOver = () => {
+       return audio.currentTime >= audio.duration
+    }
 
     const audioToSm = time => {
         const s = parseInt(time % 60);

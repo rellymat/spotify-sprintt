@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { PlayerContext } from '../player';
 import volume_icon from '../../assets/volume.png'
-import * as audio from '../../services/audio';
 
 
 const VolumeBar = () => {
-    const [volume, setVolume] = useState(audio.getVolume())
+    const { audio } = useContext(PlayerContext)
+    const [volume, setVolume] = useState(0.5)
 
     const onVolume = e => {
         const x = e.pageX - e.target.offsetLeft
@@ -13,11 +14,9 @@ const VolumeBar = () => {
     }
 
     useEffect(() => {
-        audio.setVolume(volume)
-    }, [volume])
-
-    console.log(volume);
-
+        if (audio !== '')
+            audio.volume = volume
+    }, [audio, volume])
 
     return (
         <div className="rowC volume">

@@ -6,12 +6,17 @@
   flex-direction:row;
 }
 
+.page {
+  height: 100%;
+  width: 100%;
+}
+
 /* navBar.jsx */
 
 .nav_menu{
   position: fixed;
   top: 138px;
-  left: 25px;
+  left: 2%;
   color: #191414;
 }
 
@@ -31,9 +36,7 @@
 
 .Frame_9{
   position: fixed;
-  width: 210px;
-  height: 58px;
-  left: 28px;
+  left: 1.5%;
   top: 54px;
   background: #FFFFFF;
 }
@@ -51,6 +54,7 @@
 
 .Rectangle_17{
   position: relative;
+  left: -6%;
   width: 210px;
   height: 55px;
 }
@@ -89,7 +93,7 @@
 .playitem {
   display: flex;
   flex-direction: column;
-  width: 18%;
+  width: 16%;
 }
 
 .img_playlist {
@@ -103,7 +107,7 @@
 .img_playlist:hover + .buttonPlaylist , .buttonPlaylist:hover{
   display: block;
   position: absolute;
-  margin-top: 6%;
+  margin-top: 5%;
   margin-left: 6%;
   cursor: pointer;
 }
@@ -130,6 +134,7 @@
   cursor: pointer;
   font-size: 14px;
   line-height: 17px;
+  overflow: hidden;
 }
 
 /* title.jsx */
@@ -170,8 +175,8 @@
 /* playlistCarousel.jsx */
 
 .carousel {
-  margin-top: 3%;
-  margin-left: auto;
+  width: 86%;
+  margin: 2%;
 }
 
 .playlist {
@@ -188,7 +193,8 @@
   flex-direction: column;
   align-items: center;
   margin-top: 3%;
-  width: 79%;
+  margin-bottom: 8%;
+  width: calc(100% - 270px);
 }
 
 
@@ -199,7 +205,7 @@
   position: sticky;
   width: 100%;
   top: 0%;
-  height: 22vh;
+  height: 220px;
   z-index: 1
 }
 
@@ -263,6 +269,7 @@ table {
   width: 90%;
   height: fit-content;
   margin: auto;
+  margin-bottom: 100px;
 }
 
 th {
@@ -279,6 +286,7 @@ th {
 }
 
 .border_td {
+  padding: 0.15rem 0.45rem !important;
   border-bottom: 0.5px solid #646464 !important;
 }
 
@@ -292,15 +300,16 @@ td {
 
 
 .not_liked {
-  padding: 40px 40px;
+  width: 24px;
 }
 
 .liked {
-  height: 40px;
+  width: 21px;
+  margin-top: 17%;
+  margin-left: 8%;
 }
 
 .button{
-  border: none;
   opacity: 0;
 }
 
@@ -322,17 +331,17 @@ td {
 .liked_songs {
   position: relative;
   margin-right: auto;
-  width: 85%;
+  width: calc(100% - 270px);
+  margin-bottom: 100px;
   height: 100%;
   align-items: center;
-  background: rgba(29, 185, 84, 0.15);
 }
 
 
 /* filterBar.jsx */
 
 .filterBar{
-  margin-left: -3%;
+  margin-left: -25px;
   border: none;
   font-family: 'Rubik';
   font-style: normal;
@@ -343,8 +352,7 @@ td {
 
 .bar {
   position: relative;
-  overflow: hidden;
-  margin-left: 11%;
+  margin-left: 8.5%;
   margin-top: 3%;
 }
 
@@ -363,13 +371,15 @@ textarea:focus, input:focus{
 .playbackbar{
   position: fixed;
   background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #F1F1F1;
-  height: 15%;
+  height: 100px;
   bottom: 0%;
   left: 0%;
   width: 100%;
+  
 }
 
 .text_bar{
+  width: 20%;
   margin-left: 1%;
   margin-top: auto;
 }
@@ -393,7 +403,7 @@ textarea:focus, input:focus{
 /* playbackbuttons.jsx */
 
 .playbackbuttons{
-  width: 44%;
+  width: 50%;
   margin-top: auto;
   margin-left: 2%;
 }
@@ -445,7 +455,7 @@ progress[value]::-webkit-progress-value {
 /* volumeBar.jsx */
 
 .volume{
- margin-left: 7%; 
+ margin-left: 9%; 
  align-items: center;
 }
 
@@ -455,3 +465,86 @@ progress[value]::-webkit-progress-value {
   margin-right: 5%;
 }
 
+/* genre.jsx */
+
+.border_radius {
+  border-radius: 10px;
+}
+
+.genre {
+  position: relative;
+  padding: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 18px;
+  cursor: pointer;
+}
+
+.genre_title {
+  position: absolute;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 43px;
+  color: #FFFFFF;
+}
+
+.genre_page {
+  width: calc(100% - 270px);
+}
+
+.genre_container{
+  width: 90%;
+  margin: 5% auto;
+}
+
+.genre_list {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.genre_playlist {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 92%;
+  margin: 10px auto;
+}
+
+.genre_headline {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 33px;
+  margin-left: 23px;
+  color: #191414;
+}
+
+.genre_border_radius {
+  border-radius: 9%;
+}
+
+@media only screen and (max-width: 1600px) {
+  .header {
+    height: 150px;
+  }
+
+  .img_playlist:hover + .buttonPlaylist , .buttonPlaylist:hover{
+    display: block;
+    position: absolute;
+    margin-top: 4%;
+    margin-left: 4%;
+    cursor: pointer;
+  }
+
+  .volume{
+    margin-left: 4%; 
+    align-items: center;
+   }
+
+   .playbackbuttons{
+    margin-left: unset;
+  }
+}

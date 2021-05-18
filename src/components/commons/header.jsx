@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = ({ description, image, name, number, duration}) => {
+const Header = ({playlist, description, image, name, number, duration}) => {
     const style = {
             backgroundImage: `url(${image})`,
             backgroundPosition: 'center',
@@ -13,7 +13,7 @@ const Header = ({ description, image, name, number, duration}) => {
             <div className="black-layer"></div>
             <div className="rowC first-line">
                 <p className="header-text">{name}</p>
-                <p className="header-text">{number} songs</p>
+                <p className="header-text">{number} {playlist ? 'playlist' : 'songs'}</p>
             </div>
             <div className="rowC second-line">
                 <p className="description-text">{description}</p>

@@ -4,17 +4,15 @@ import PlaylistComp from "./playlistComp";
 
 
 const LikedSong = () => {
-    
+
     return (
         <PlaylistComp
             id='liked_tracks'
             description=''
             image={likedImg}
             name="Liked Songs"
-             />
+        />
     )
-
-
 
 }
 

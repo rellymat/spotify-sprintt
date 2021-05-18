@@ -21,7 +21,7 @@ function PlaylistCarousel({ title, playlists }) {
 
 
     return (
-        <div className="container carousel">
+        <div className="carousel">
             <Title title={title} page={page} handleClick={onArrowClick} length={length} />
             <div className="rowC playlist">
                 {currectFive.length > 0 && currectFive.map((playlist, index) => {

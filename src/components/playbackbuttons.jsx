@@ -1,5 +1,5 @@
-import React from 'react';
-import * as audio from '../services/audio'
+import React, { useContext } from 'react';
+import { PlayerContext } from './player';
 import ProgressBar from './commons/progressBar';
 import play from '../assets/controller_icons/Play.svg'
 import nextIcon from '../assets/controller_icons/next.svg'
@@ -7,21 +7,22 @@ import pause from '../assets/controller_icons/pause.svg'
 import prev from '../assets/controller_icons/prev.svg'
 
 const PlaybackButtons = () => {
+    const { isPlaying, changeTrack } = useContext(PlayerContext)
 
     const playButton = () => {
-        return audio.getIsPlay() ? pause : play
+        return isPlaying[0] ? pause : play
     }
 
     const onPrevious = () => {
-        audio.previousSong()
+        changeTrack(-1)
     }
 
     const onNext = () => {
-        audio.nextSong()
+        changeTrack(1)
     }
 
     const onPlay = () => {
-        audio.playHandle()
+        isPlaying[1](!isPlaying[0])
     }
 
     return (

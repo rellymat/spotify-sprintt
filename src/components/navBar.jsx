@@ -36,7 +36,7 @@ class NavBar extends Component {
                 <div className="nav_menu">
                     {this.state.nav_items.map((item, index) => {
                         return (
-                            <NavItem key={index} item={item} />
+                            <NavItem key={index} item={item}/>
                         )
                     })}
                 </div>

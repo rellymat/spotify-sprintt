@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { likeTrack } from "../services/playlists";
-import { getPlaylist } from '../services/playlists';
-import * as audio from '../services/audio';
+import { likeTrack, getPlaylist, addToRecently } from "../services/playlists";
 import FilterBar from './commons/filterBar';
 import Header from './commons/header';
 import SongsTable from './songsTable';
@@ -13,25 +11,24 @@ const PlaylistComp = ({ id, description, image, name }) => {
     const [duration, setDuration] = useState('')
     const [tracksNumber, setTracksNumber] = useState('')
     const [input, setInput] = useState('')
-    const [track, setTrack] = useState({})
-    const [isPlay, setIsPlay] = useState(false)
     const [flag, setFlag] = useState(true)
 
     useEffect(() => {
     }, [flag])
 
     const handleLike = async track => {
-        const isLiked = track.is_liked === 0 
-        track.is_liked = isLiked ? 1 : 0 
+        const isLiked = track.is_liked === 0
+        track.is_liked = isLiked ? 1 : 0
         try {
             await likeTrack(track.track_id, isLiked)
             setFlag(!flag)
-            if(id === 'liked_tracks'){
+            if (id === 'liked_tracks') {
                 const newData = data.filter(d => {
                     return d !== track
                 })
                 setData(newData)
                 setDefaultData(newData)
+                setTracksNumber(newData.length)
             }
         } catch (error) {
         }
@@ -39,7 +36,7 @@ const PlaylistComp = ({ id, description, image, name }) => {
 
     useEffect(async () => {
         try {
-            const { tracks, playlist_duration } = await fetchData() 
+            const { tracks, playlist_duration } = await fetchData()
             setDefaultData(tracks)
             setData(tracks)
             setDuration(playlist_duration)
@@ -71,19 +68,15 @@ const PlaylistComp = ({ id, description, image, name }) => {
             return true
     }
 
-
-    useEffect(async () => {
-        if (isPlay) {
-            audio.play()
+    const setToRecently = async track_id => {
+        if (id !== 'liked_tracks') {
             try {
-                await audio.addToRecently(id, track.track_id)
+                await addToRecently(id, track_id)
             } catch (error) {
                 alert(error.message)
             }
-        } else
-            audio.pause()
-    }, [track, isPlay])
-
+        }
+    }
 
     return (
         <div className='liked_songs'>
@@ -95,8 +88,10 @@ const PlaylistComp = ({ id, description, image, name }) => {
                 duration={duration} />
             <FilterBar input={input} onChange={updateFilter} />
             <SongsTable
+                image={image}
                 table={data}
-                onLike={handleLike} />
+                onLike={handleLike}
+                setToRecently={setToRecently} />
         </div>
     );
 }
