@@ -11,6 +11,8 @@ const getEncryptedToken = (token) => {
     return btoa(stringToEncrypt)
 }
 
+const newToken = getEncryptedToken(token)
+
 export const PlayerProvider = props => {
     const [track, setTrack] = useState('')
     const [path, setPath] = useState(window.location.pathname)
@@ -38,8 +40,9 @@ export const PlayerProvider = props => {
         if (trackIndex === -1)
             return
 
-        if (isPlaying === true)
+        if (isPlaying === true){
             audio.pause()
+        }
         
         setIsPlaying(true)
 
@@ -68,7 +71,6 @@ export const PlayerProvider = props => {
     }
 
     const setSong = song => {
-        const newToken = getEncryptedToken(token)
         const trackAPI = `http://api.sprintt.co/spotify/play/${song.track_id}?access=${newToken}`
         setTrack(song)
         setAudio(new Audio(trackAPI))
